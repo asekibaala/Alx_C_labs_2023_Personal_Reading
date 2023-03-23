@@ -1,4 +1,4 @@
-fgetc(): This function reads a single character from a file and returns it as an integer value. For example, if we have a file named "test.txt" with the contents "hello", we can use fgetc() to read the first character ('h') like this:
+/*fgetc(): This function reads a single character from a file and returns it as an integer value. For example, if we have a file named "test.txt" with the contents "hello", we can use fgetc() to read the first character ('h') like this:
 scss
 Copy code
 FILE *fp;
@@ -223,7 +223,7 @@ int main() {
     
     return 0;
 }
-
+*/
 
 
 
