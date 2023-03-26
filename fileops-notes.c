@@ -86,7 +86,8 @@ fprintf(fp, "The answer is %d", num);
 fclose(fp);
 In this example, we open the file in write mode ("w"), write the formatted string "The answer is 42" to the file using fprintf(), and then close the file using fclose().
 
-ftell(): This function returns the current position of the file pointer. For example, we can use ftell() to find out where we are in a file named "test.txt" like this:
+ftell(): This function returns the current position of the file pointer. 
+For example, we can use ftell() to find out where we are in a file named "test.txt" like this:
 scss
 Copy code
 FILE *fp;
@@ -96,7 +97,8 @@ pos = ftell(fp);
 fclose(fp);
 In this example, "pos" is a long integer variable that will hold the position of the file pointer, "ftell" returns the current position of the file pointer, and we close the file using fclose().
 
-fseek(): This function moves the file pointer to a specific position in the file. For example, we can use fseek() to move the file pointer to the 10th byte in a file named "test.txt" like this:
+fseek(): This function moves the file pointer to a specific position in the file. For example, 
+we can use fseek() to move the file pointer to the 10th byte in a file named "test.txt" like this:
 scss
 Copy code
 FILE *fp;
@@ -223,6 +225,165 @@ int main() {
     
     return 0;
 }
+
+__Noreturn: This is a function specifier that indicates that a function does not return to its caller. 
+This can be useful for functions like exit() or abort() which are not expected to return. Here is an example:
+#include <stdlib.h>
+
+_Noreturn void my_exit(int code) {
+    // clean up resources
+    exit(code);
+}
+
+int main() {
+    my_exit(0); // this function call will not return
+    return 0;
+}
+
+_Alignof and _Alignas: These are operators that allow you to specify alignment requirements for data types and variables. 
+This can be useful for ensuring 
+that data is stored in memory in a particular way, which can be important for performance reasons. Here is an example:
+
+#include <stdio.h>
+
+struct mystruct {
+    int a;
+    double b;
+};
+
+int main() {
+    printf("Alignment of mystruct: %zu\n", _Alignof(struct mystruct));
+    _Alignas(16) struct mystruct s; // align s on a 16-byte boundary
+    printf("Address of s: %p\n", &s);
+    return 0;
+}
+
+_Bool: This is a built-in data type in C that can store true or false values.
+ This can be useful for boolean logic, which is used in many programming tasks. Here is an example:
+#include <stdio.h>
+#include <stdbool.h>
+
+int main() {
+    bool b1 = true;
+    bool b2 = false;
+    printf("b1 is %d, b2 is %d\n", b1, b2);
+    return 0;
+}
+
+_Exit: This is a function that immediately terminates a program without performing 
+any cleanup operations. This can be useful for
+ handling fatal errors or other exceptional circumstances. Here is an example:
+
+ #include <stdlib.h>
+
+int main() {
+    int *ptr = malloc(10 * sizeof(int));
+    if (ptr == NULL) {
+        _Exit(1); // out of memory - terminate program immediately
+    }
+    // use ptr
+    free(ptr);
+    return 0;
+}
+
+_Complex: This is a built-in data type in C that represents complex numbers. This can be useful for 
+tasks that involve complex arithmetic, such as signal processing or numerical analysis. Here is an example:
+
+#include <stdio.h>
+#include <complex.h>
+
+int main() {
+    double complex z1 = 1.0 + 2.0 * I;
+    double complex z2 = 3.0 - 4.0 * I;
+    double complex sum = z1 + z2;
+    printf("z1 = %f + %fi\n", creal(z1), cimag(z1));
+    printf("z2 = %f + %fi\n", creal(z2), cimag(z2));
+    printf("sum = %f + %fi\n", creal(sum), cimag(sum));
+    return 0;
+}
+
+_Pragma, __func__: These are preprocessor directives that allow you to control 
+various aspects of the compilation process,
+ such as warning messages or optimization settings. Here is an example:
+#include <stdio.h>
+
+#define MY_WARNING_MESSAGE "This is a warning"
+
+void my_func() {
+    #pragma message(MY_WARNING_MESSAGE)
+    printf("Function name: %s\n", __func__);
+}
+
+int main() {
+    my_func();
+    return 0;
+}
+
+Generic is a feature in C that allows for generic programming. 
+It is used to write functions and macros that can take arguments of 
+different types and perform different operations based on the type of the argument.
+
+Here's an example:
+
+#include <stdio.h>
+
+void print_generic(void *ptr, int type) {
+    switch (type) {
+        case 0:
+            printf("%d\n", *(int *)ptr);
+            break;
+        case 1:
+            printf("%f\n", *(float *)ptr);
+            break;
+        case 2:
+            printf("%c\n", *(char *)ptr);
+            break;
+    }
+}
+
+int main() {
+    int i = 10;
+    float f = 3.14;
+    char c = 'a';
+
+    print_generic(&i, 0);  // prints 10
+    print_generic(&f, 1);  // prints 3.140000
+    print_generic(&c, 2);  // prints a
+
+    return 0;
+}
+
+
+In this example, the print_generic function takes a pointer to a generic type void *ptr and an 
+integer type that determines the type of the argument. The function then uses a switch 
+statement to determine the type of the argument and perform the appropriate operation.
+
+The _Generic keyword simplifies this type of code by allowing the programmer to define the
+ behavior directly within the function call itself. Here's an example:
+
+ #include <stdio.h>
+
+#define print_generic(x) _Generic((x), \
+    int: printf("%d\n", x), \
+    float: printf("%f\n", x), \
+    char: printf("%c\n", x) \
+)
+
+int main() {
+    int i = 10;
+    float f = 3.14;
+    char c = 'a';
+
+    print_generic(i);  // prints 10
+    print_generic(f);  // prints 3.140000
+    print_generic(c);  // prints a
+
+    return 0;
+}
+In this example, the print_generic macro takes a single argument x and uses the _Generic keyword to 
+determine the type of the argument and perform the appropriate 
+operation using a sequence of type associations separated by colons.
+
 */
 
 
