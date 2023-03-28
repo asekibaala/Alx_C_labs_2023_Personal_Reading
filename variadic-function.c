@@ -5,15 +5,15 @@
 int
 sum (int n, ...)
 {
-  va_list list;
-  va_start (list, n);
+  va_list list; //defining a list to keep track of the parameters
+  va_start (list, n); //intilizing the list
   int tot = 0;
   while (n--)
     {
-      int v = va_arg (list, int);
+      int v = va_arg (list, int); //picking a value while moving to the next one
       tot += v;
     }
-  va_end (list);
+  va_end (list); //closig the list after processing 
   return tot;
 }
 
