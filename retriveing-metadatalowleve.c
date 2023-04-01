@@ -59,7 +59,7 @@ int main (int argc, char *argv[])
 {
     if (argc < 2)
     {
-        fprint(stderr, "usage: %s filename...\n",argv[0]);
+        fprintf (stderr, "usage: %s filename...\n",argv[0]);
         return 1;
     }
 
