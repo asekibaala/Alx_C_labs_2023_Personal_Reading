@@ -16,7 +16,7 @@ file (char *name)
     return-1;
  }
 
- printf("\tDevice ID:\t%ld\n",buf.std_dev);
+ printf("\tDevice ID:\t%ld\n",buf.st_dev);
  printf("\tInode no:\t%ld\n",buf.st_ino);
  printf("\tFile mode:\t%o\n",buf.st_mode);
  if (buf.st_mode & S_IFREG)
