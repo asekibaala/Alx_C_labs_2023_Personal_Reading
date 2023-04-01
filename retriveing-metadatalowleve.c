@@ -41,15 +41,15 @@ file (char *name)
   if (buf.st_mode & S_IWOTH)
     printf ("\t\twritable for others\n");
   if (buf.st_mode & S_IXOTH)
-    printf ("\t\texecutable for others\n")
+    printf ("\t\texecutable for others\n");
 
   printf ("\tHard links:\t%ld\n", buf.st_nlink);
   printf ("\tOwner UID:\t%d\n", buf.st_uid);
   printf ("\tGroup GID:\t%d\n", buf.st_gid);
   printf ("\tSpecial ID:\t%ld\n", buf.st_rdev);
   printf ("\tFile size:\t%ld\n", buf.st_size);
-  printf ("\tBlk size:\t%ld\n", buf.st_blksize);
-  printf ("\tBlk count:\t%ld\n", buf.st_blocks);
+  //printf ("\tBlk size:\t%ld\n", buf.st_blksize);
+ // printf ("\tBlk count:\t%ld\n", buf.st_blocks);
   printf ("\tAccess time:\t%s", ctime (&buf.st_atime));
   printf ("\tCreation time:\t%s", ctime (&buf.st_ctime));
   printf ("\tModifictn time:\t%s", ctime (&buf.st_mtime));
