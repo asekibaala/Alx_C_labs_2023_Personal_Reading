@@ -1,6 +1,6 @@
 #include <stdio.h>
-
-int add (int x, int y);
+#include "main.h"  // calling the library through a header file
+/*int add (int x, int y);*/ //calling the library through a direct global function definition.
 int 
 main  (void)
 {
