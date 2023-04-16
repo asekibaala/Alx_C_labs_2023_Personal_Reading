@@ -11,4 +11,4 @@ Program in C to convert uppercase to lowercase and viceversa in a file,program
 can take a command line argument for the name of the file or you can ask user for
  the name of the file this program needs to create a temporary file to store the 
  result (converted character),can then rename this remporay file back to original file
-Use isupper() to check for upper case and tolower for lower case and toupper
+Use isupper() , islower() to check for upper case , lower case and tolower for lower case and toupper
