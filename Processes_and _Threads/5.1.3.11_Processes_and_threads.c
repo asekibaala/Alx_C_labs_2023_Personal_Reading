@@ -16,7 +16,7 @@ main (void)
     for (i=0; i<CHILDERN; i++)
     {
         sprintf(argline,"5.1.1.6_Processes_and_threads.exe process=%d arg1 arg2",i+1);
-        if (CreateProcess(NULL, argline, NULL, NULL, 0, 0, "Path=C:\\My\\Path\0\0", NULL,&si, pi + i) == 0)
+        if (CreateProcess(NULL, argline, NULL, NULL, 0, 0, NULL, NULL,&si, pi + i) == 0)
         {
             printf ("CreateProcess #%d failed (%d).\n",i+1,GetLastError());
             return 2;
