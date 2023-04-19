@@ -16,3 +16,15 @@ WaitForSingleObject();
 POSIX threads;
 MS Windows threads;
 C11 threads ().
+
+Resources 
+
+https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/ns-processthreadsapi-startupinfoa?redirectedfrom=MSDN
+
+https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/ns-processthreadsapi-process_information?redirectedfrom=MSDN
+
+MS Windows API native types
+https://learn.microsoft.com/en-us/windows/win32/winprog/windows-data-types?redirectedfrom=MSDN
+
+
+https://learn.microsoft.com/en-us/windows/win32/api/synchapi/nf-synchapi-waitforsingleobject?redirectedfrom=MSDN
