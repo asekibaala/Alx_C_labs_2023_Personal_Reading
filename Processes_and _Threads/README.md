@@ -28,3 +28,16 @@ https://learn.microsoft.com/en-us/windows/win32/winprog/windows-data-types?redir
 
 
 https://learn.microsoft.com/en-us/windows/win32/api/synchapi/nf-synchapi-waitforsingleobject?redirectedfrom=MSDN
+
+
+prototype of CreateProcess
+int CreateProcess (char *lpApplicationName,
+		   char *lpCommandLine,
+		   SECURITY_ATTRIBUTES * lpProcessAttributes,
+		   SECURITY_ATTRIBUTES * lpThreadAttributes,
+		   int bInheritHandles,
+		   int dwCreationFlags,
+		   void lpEnvironment,
+		   char lpCurrentDirectory,
+		   STARTUPINFO * lpStartupInfo,
+		   PPROCESS_INFORMATION * lpProcessInformation);
