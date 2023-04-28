@@ -11,10 +11,10 @@ thread (void *data)
     char *msg = (char *)data;
     pthread_t self = pthread_self();
     srand (self);
-    printf ("Thread %lxd started:\'%s\'\n",self,msg);
+    printf ("Thread %x started:\'%s\'\n",self,msg);
     long delay = rand () % 5 + 1;
     sleep (delay);
-    printf ("Thread %lxd finished\n",self);
+    printf ("Thread %x finished\n",self);
     return (void *) delay;
 }
 int 
