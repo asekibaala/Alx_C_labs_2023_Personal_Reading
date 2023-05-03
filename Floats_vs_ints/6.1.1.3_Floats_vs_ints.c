@@ -7,7 +7,7 @@ int main (void)
     {
         x *= 2;
     }
-printf("%d\n",x);
+printf("%f\n",x);
 
 return 0;
 }
