@@ -10,8 +10,7 @@
 
 #define CALL(x) if(!(x) && fprint(stderr, "'%s' failed (errno=%d)\n",#x,errno))exit(1)
 
-int
-main (int argc, char *argv[])
+int main (int argc, char *argv[])
 {
   if (argc != 2)
     {
