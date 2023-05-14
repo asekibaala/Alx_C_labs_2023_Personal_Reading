@@ -1,0 +1,12 @@
+#!/bin/bash
+
+
+#max_pid=$(sysctl kernel.pid_max | awk '{print $NF}')
+#echo "The maximum value of a process ID is: $max_pid"
+
+
+#Get the value of the /proc/sys/kernel/pid_max file.
+max_pid=$(cat /proc/sys/kernel/pid_max)
+
+#Print the value of the pid_max variable.
+echo "The maximum value a process ID can be is: $max_pid"
