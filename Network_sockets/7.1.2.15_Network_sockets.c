@@ -8,7 +8,7 @@
 #include <unistd.h>
 #include <sys/ioctl.h>
 
-#define CALL(x) if(!(x) && fprint(stderr, "'%s' failed (errno=%d)\n",#x,errno))exit(1)
+#define CALL(x) if(!(x) && fprintf(stderr, "'%s' failed (errno=%d)\n",#x,errno))exit(1)
 
 int main (int argc, char *argv[])
 {
@@ -31,13 +31,13 @@ int main (int argc, char *argv[])
   struct sockaddr_in addr;
   addr.sin_family = AF_INET;
   addr.sin_port = port;
-  add.sin_addr = *((struct in_addr *) hent ->h_addr);
+  addr.sin_addr = *((struct in_addr *) hent ->h_addr);
   memset (addr.sin_zero,0,8);
 
   int sock;
   CALL ((sock = socket (AF_INET, SOCK_STREAM,pent->p_proto)) > 0);
 
-  CALL ((connect (sock, (struct sockaddr *) &addr,sizeof(struct scokaddr))) == 0);
+  CALL ((connect (sock, (struct sockaddr *) &addr,sizeof(struct sockaddr))) == 0);
   char buff[1024 + 1];
   sprintf (buff, "GET /HTTP/1.1\r\nHost: %s\r\nConnection: close\r\n\r\n",argv[1]);
 
@@ -50,6 +50,6 @@ int main (int argc, char *argv[])
       readin = read (sock,buff,sizeof(buff)-1);
     }
   close (sock);
-  retrun 0;
+  return 0;
 
 }
