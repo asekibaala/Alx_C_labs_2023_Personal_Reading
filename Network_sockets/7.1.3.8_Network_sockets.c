@@ -8,7 +8,7 @@
 #include <arpa/inet.h>
 #include <errno.h>
 
-#define CALL(x) if(counter++ && !(x))error(#x,_LINE_,counter)
+#define CALL(x) if(counter++ && !(x))error(#x,__LINE__,counter)
 
 int counter = 2;
 
@@ -37,7 +37,7 @@ main (int argc, char *argv[])
   int listen_sock;
   CALL ((listen_sock = socket (AF_INET, SOCK_STREAM, pent->p_proto)) > 0);
 
-  struct sockadd_in servaddr;
+  struct sockaddr_in servaddr;
   servaddr.sin_family = AF_INET;
   servaddr.sin_port = htons (port);
   servaddr.sin_addr.s_addr = htonl (INADDR_ANY);
@@ -45,7 +45,7 @@ main (int argc, char *argv[])
 
   int opt_on = 1;
   CALL (setsockopt
-	(listen_sock,SQL_SOCKET, SO_REUSEADDR,&opt_on,
+	(listen_sock,SOL_SOCKET, SO_REUSEADDR,&opt_on,
 	 sizeof (opt_on)) == 0);
   
   CALL (bind (listen_sock,(struct sockaddr *) &servaddr, sizeof (servaddr)) == 0);

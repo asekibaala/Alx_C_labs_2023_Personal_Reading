@@ -5,7 +5,7 @@
 #include <netdb.h>
 #include <sys/socket.h>
 
-#define CALL(x) if(counter++ && !(x))error(#x,_LINE_,counter)
+#define CALL(x) if(counter++ && !(x))error(#x,__LINE__,counter)
 
 int counter = 2;
 
@@ -34,12 +34,12 @@ int main (int argc, char *argv[])
   struct hostent *hent = NULL;
   CALL ((hent = gethostbyname (argv[1])) != NULL);
 
-  struct protent *pent;
+  struct protoent *pent;
   CALL ((pent = getprotobyname ("tcp")) != NULL);
 
   struct sockaddr_in addr;
   addr.sin_family = AF_INET;
-  addr.sin_port = htons (ports);
+  addr.sin_port = htons (port);
   addr.sin_addr = * ((struct in_addr *) hent->h_addr);
   memset (addr.sin_zero, 0, 8);
 
