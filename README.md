@@ -15,8 +15,57 @@ Getting Started
 To get started, clone the repository to your local machine:
 git clone 
 
-Authors:
-Abel Sekibaala
+Authors:Abel Sekibaala
+
+**C Intermediate Concepts you must know 
+**
+Module 5
+array indexing,
+using pointers: perils and disadvantages,
+the void type,
+arrays of arrays and multidimensional arrays,
+memory allocation and deallocation: the malloc() and free() functions,
+arrays of pointers vs. multidimensional arrays,
+functions,
+how to declare, define and invoke functions,
+the scope of variables, local variables and function parameters.
+
+**Module 6**
+structures,
+declaring, using and initializing structures,
+pointers to structures and arrays of structures,
+the basics of recursive data collections,
+pointers, arrays and structures as function parameters,
+function result and the return statement,
+void as a parameter, pointer and result,
+parameterizing the main function,
+external functions and the extern declarator,
+header files and their role.
+
+**Module 7**
+files vs. streams,
+header files needed for stream operations,
+the FILE structure,
+opening and closing streams, open modes, the errno variable,
+reading and writing to/from a stream,
+predefined streams: stdinstdout, and stderr,
+stream manipulation: the fgetc(), fputc(), fgets(), and fputs() functions,
+raw input/output: the fread(), and fwrite() functions.
+
+**Module 8**
+preprocessor,
+#include - how to make use of a header file,
+#define - simple and parameterized macros,
+the #undef directive,
+predefined preprocessor symbols,
+macrooperators: # and ##,
+conditional compilation: the #if and #ifdef directives,
+avoiding multiple compilations of the same header files,
+scopes of declarations, storage classes,
+user-defined types,
+pointers to functions,
+analyzing and creating complex declarations.
+
 **C Advanaced Concepts you Must know **
 
 **C Advanced: Module 2**
