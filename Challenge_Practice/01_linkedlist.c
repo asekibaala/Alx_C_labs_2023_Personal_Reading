@@ -16,6 +16,15 @@ int main (){
     head->data = 45;
     head->link = NULL;
 
+    //creating a second node to form a linked listed
+    struct node *current = malloc(sizeof(struct node));
+    current->data = 98;
+    current->link = NULL;
+
+    //linking the first node to the second node
+    head->link = current;
+    
+
     printf("%d",head->data);
     return 0;
 
