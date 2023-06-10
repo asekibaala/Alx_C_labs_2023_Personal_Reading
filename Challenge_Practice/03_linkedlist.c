@@ -6,7 +6,7 @@ struct node{
     struct node *link;
 };
 
-void count_of_nodes(struct node *head){
+void print_of_nodes(struct node *head){
     //intializting counter to use for counting 
     int count = 0;
     //checking if recieved head pointer is not NULL
@@ -64,7 +64,7 @@ int main (){
 
     head->link->link->link = current;
     
-    count_of_nodes(head);
+    print_of_nodes(head);
 
     return 0;
 
