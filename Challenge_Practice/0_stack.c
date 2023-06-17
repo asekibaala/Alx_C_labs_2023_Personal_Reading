@@ -23,10 +23,5 @@ int main()
     push(4);
     push(5);
 
-    for(top = 0; top < MAX; top++)
-    {
-        printf("%d\n", stack_arr[top]);
-    }
-
     return 0;
 }
